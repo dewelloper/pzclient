@@ -130,6 +130,13 @@ test('api structure', () => {
 	expect(typeof api.pages.create).toBe('function');
 	expect(typeof api.pages.update).toBe('function');
 	expect(typeof api.pages.delete).toBe('function');
+
+	expect(typeof api.cars.list).toBe('function');
+	expect(typeof api.cars.retrieve).toBe('function');
+	expect(typeof api.cars.create).toBe('function');
+	expect(typeof api.cars.update).toBe('function');
+	expect(typeof api.cars.delete).toBe('function');
+
 	expect(typeof api.tokens.list).toBe('function');
 	expect(typeof api.tokens.retrieve).toBe('function');
 	expect(typeof api.tokens.create).toBe('function');

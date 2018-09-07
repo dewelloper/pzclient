@@ -32,6 +32,7 @@ import Text from './api/text';
 import Settings from './api/settings';
 import CheckoutFields from './api/checkoutFields';
 import Pages from './api/pages';
+import Cars from './api/cars';
 import Tokens from './api/tokens';
 import Redirects from './api/redirects';
 import Webhooks from './api/webhooks';
@@ -84,6 +85,7 @@ export default class Client {
 		this.settings = new Settings(apiClient);
 		this.checkoutFields = new CheckoutFields(apiClient);
 		this.pages = new Pages(apiClient);
+		this.cars = new Cars(apiClient);
 		this.tokens = new Tokens(apiClient);
 		this.redirects = new Redirects(apiClient);
 		this.webhooks = new Webhooks(apiClient);
@@ -101,6 +103,7 @@ export default class Client {
 		this.ajax.paymentMethods = new AjaxPaymentMethods(ajaxClient);
 		this.ajax.paymentFormSettings = new AjaxPaymentFormSettings(ajaxClient);
 		this.ajax.pages = new Pages(ajaxClient);
+		this.ajax.cars = new Cars(ajaxClient);
 
 		this.webstore = {};
 		this.webstore.account = new WebStoreAccount(webstoreClient);

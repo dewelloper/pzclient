@@ -1,36 +1,32 @@
 {
-  "name": "cezerin-client",
-  "version": "0.34.0",
-  "description": "Cezerin API client library. Work on browser and server.",
+  "name": "pz-client",
+  "version": "0.2.0",
+  "description": "part sone API client library. Work on browser and server.",
   "keywords": [
-    "cezerin",
-    "cezerin api",
-    "cezerin ajax",
-    "cezerin web store",
-    "ecommerce api",
-    "shopping cart api"
+    "parça alanı alani",
+    "parça alanı api",
+    "parça alanı ajax",
+    "parça alanı web store",
+    "parça alanı ecommerce api",
+    "parça alanı alışveriş kart api"
   ],
-  "homepage": "https://cezerin.com",
-  "bugs": "https://github.com/cezerin/client/issues",
+  "homepage": "https://parcaalani.com",
+  "bugs": "https://github.com/dewelloper/pzclient/issues",
   "license": "MIT",
   "author": {
-    "name": "Restmount <jsonmount@gmail.com>",
-    "url": "https://github.com/restmount"
+    "name": "dewelloper <dewelloper@gmail.com>",
+    "url": "https://github.com/dewelloper"
   },
   "contributors": [
     {
-      "name": "Restmount <jsonmount@gmail.com>",
-      "url": "https://github.com/restmount"
-    },
-    {
-      "name": "Sergey Onufrienko <sergey@onufrienko.com>",
-      "url": "https://github.com/sonufrienko"
+      "name": "dewelloper <dewelloper@gmail.com>",
+      "url": "https://github.com/dewelloper"
     }
   ],
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cezerin/client"
+    "url": "https://github.com/dewelloper/pzclient"
   },
   "scripts": {
     "build": "babel src -d lib",

@@ -1,7 +1,7 @@
-export default class Cars {
+export default class Marks {
 	constructor(client) {
 		this.client = client;
-		this.resourceUrl = '/cars';
+		this.resourceUrl = '/marks';
 	}
 
 	list(filter) {

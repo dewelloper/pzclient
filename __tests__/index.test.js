@@ -1,4 +1,4 @@
-import CezeriClient from '../src/index';
+import PzClient from '../src/index';
 
 const API_CREDENTIALS = {
 	apiBaseUrl: '/api',
@@ -10,7 +10,7 @@ const AJAX_CREDENTIALS = {
 };
 
 test('api structure', () => {
-	const api = new CezeriClient(API_CREDENTIALS);
+	const api = new PzClient(API_CREDENTIALS);
 	expect(typeof api.products.list).toBe('function');
 	expect(typeof api.products.retrieve).toBe('function');
 	expect(typeof api.products.create).toBe('function');
@@ -131,11 +131,18 @@ test('api structure', () => {
 	expect(typeof api.pages.update).toBe('function');
 	expect(typeof api.pages.delete).toBe('function');
 
-	expect(typeof api.cars.list).toBe('function');
-	expect(typeof api.cars.retrieve).toBe('function');
-	expect(typeof api.cars.create).toBe('function');
-	expect(typeof api.cars.update).toBe('function');
-	expect(typeof api.cars.delete).toBe('function');
+	expect(typeof api.marks.list).toBe('function');
+	expect(typeof api.marks.retrieve).toBe('function');
+	expect(typeof api.models.list).toBe('function');
+	expect(typeof api.models.retrieve).toBe('function');
+	expect(typeof api.years.list).toBe('function');
+	expect(typeof api.years.retrieve).toBe('function');
+	expect(typeof api.engines.list).toBe('function');
+	expect(typeof api.engines.retrieve).toBe('function');
+	expect(typeof api.fuels.list).toBe('function');
+	expect(typeof api.fuels.retrieve).toBe('function');
+	expect(typeof api.pcategories.list).toBe('function');
+	expect(typeof api.pcategories.retrieve).toBe('function');	
 
 	expect(typeof api.tokens.list).toBe('function');
 	expect(typeof api.tokens.retrieve).toBe('function');
@@ -160,7 +167,7 @@ test('api structure', () => {
 });
 
 test('ajax structure', () => {
-	const api = new CezeriClient(AJAX_CREDENTIALS);
+	const api = new PzClient(AJAX_CREDENTIALS);
 	expect(typeof api.ajax.products.list).toBe('function');
 	expect(typeof api.ajax.products.retrieve).toBe('function');
 	expect(typeof api.ajax.products.create).toBe('function');
@@ -188,10 +195,22 @@ test('ajax structure', () => {
 	expect(typeof api.ajax.pages.create).toBe('function');
 	expect(typeof api.ajax.pages.update).toBe('function');
 	expect(typeof api.ajax.pages.delete).toBe('function');
+
+	expect(typeof api.ajax.marks.list).toBe('function');
+	expect(typeof api.ajax.marks.retrieve).toBe('function');
+	expect(typeof api.ajax.models.list).toBe('function');
+	expect(typeof api.ajax.models.retrieve).toBe('function');
+	expect(typeof api.ajax.years.list).toBe('function');
+	expect(typeof api.ajax.years.retrieve).toBe('function');
+	expect(typeof api.ajax.engines.list).toBe('function');
+	expect(typeof api.ajax.engines.retrieve).toBe('function');
+	expect(typeof api.ajax.fuels.list).toBe('function');
+	expect(typeof api.ajax.fuels.retrieve).toBe('function');
+
 });
 
 test('webstore structure', () => {
-	const api = new CezeriClient(AJAX_CREDENTIALS);
+	const api = new PzClient(AJAX_CREDENTIALS);
 	expect(typeof api.webstore.account.retrieve).toBe('function');
 	expect(typeof api.webstore.account.update).toBe('function');
 	expect(typeof api.webstore.account.updateDeveloper).toBe('function');
@@ -206,6 +225,6 @@ test('webstore structure', () => {
 });
 
 test('static methods', () => {
-	expect(typeof CezeriClient.authorize).toBe('function');
-	expect(typeof CezeriClient.authorizeInWebStore).toBe('function');
+	expect(typeof PzClient.authorize).toBe('function');
+	expect(typeof PzClient.authorizeInWebStore).toBe('function');
 });

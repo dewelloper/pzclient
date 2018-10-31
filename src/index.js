@@ -118,6 +118,7 @@ export default class Client {
 		this.ajax.years = new Years(ajaxClient);
 		this.ajax.engines = new Engines(ajaxClient);
 		this.ajax.fuels = new Fuels(ajaxClient);
+		this.ajax.pcategories = new Pcategories(ajaxClient);
 
 		this.webstore = {};
 		this.webstore.account = new WebStoreAccount(webstoreClient);

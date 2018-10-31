@@ -206,6 +206,8 @@ test('ajax structure', () => {
 	expect(typeof api.ajax.engines.retrieve).toBe('function');
 	expect(typeof api.ajax.fuels.list).toBe('function');
 	expect(typeof api.ajax.fuels.retrieve).toBe('function');
+	expect(typeof api.ajax.pcategories.list).toBe('function');
+	expect(typeof api.ajax.pcategories.retrieve).toBe('function');
 
 });
 

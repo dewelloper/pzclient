@@ -1,6 +1,6 @@
 {
   "name": "pz-client",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "part sone API client library. Work on browser and server.",
   "keywords": [
     "parça alanı alani",

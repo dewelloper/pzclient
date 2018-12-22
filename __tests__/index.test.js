@@ -144,6 +144,12 @@ test('api structure', () => {
 	expect(typeof api.pcategories.list).toBe('function');
 	expect(typeof api.pcategories.retrieve).toBe('function');	
 
+	
+	expect(typeof api.AjaxLogin.retrieve).toBe('function');
+	expect(typeof api.AjaxRegister.retrieve).toBe('function');
+	expect(typeof api.AjaxAccount.retrieve).toBe('function');
+	expect(typeof api.AjaxAccount.update).toBe('function');
+
 	expect(typeof api.tokens.list).toBe('function');
 	expect(typeof api.tokens.retrieve).toBe('function');
 	expect(typeof api.tokens.create).toBe('function');
@@ -208,6 +214,11 @@ test('ajax structure', () => {
 	expect(typeof api.ajax.fuels.retrieve).toBe('function');
 	expect(typeof api.ajax.pcategories.list).toBe('function');
 	expect(typeof api.ajax.pcategories.retrieve).toBe('function');
+
+	expect(typeof api.ajax.AjaxLogin.retrieve).toBe('function');
+	expect(typeof api.ajax.AjaxRegister.retrieve).toBe('function');
+	expect(typeof api.ajax.AjaxAccount.retrieve).toBe('function');
+	expect(typeof api.ajax.AjaxAccount.update).toBe('function');
 
 });
 

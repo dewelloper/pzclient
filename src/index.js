@@ -49,6 +49,9 @@ import WebStoreServiceSettings from './webstore/serviceSettings';
 import WebStoreServiceActions from './webstore/serviceActions';
 import WebStoreServiceLogs from './webstore/serviceLogs';
 import Xmlimporter from './api/xmlimporter';
+import AjaxLogin from './api/AjaxLogin';
+import AjaxRegister from './api/AjaxRegister';
+import AjaxAccount from './api/AjaxAccount';
 
 export default class Client {
 	constructor(options = {}) {
@@ -104,6 +107,9 @@ export default class Client {
 		this.apps = {};
 		this.apps.settings = new AppSettings(apiClient);
 		this.xmlimporter = new Xmlimporter(apiClient);
+		this.AjaxLogin = new AjaxLogin(apiClient);
+		this.AjaxRegister = new AjaxRegister(apiClient);
+		this.AjaxAccount = new AjaxAccount(apiClient);
 
 		this.ajax = {};
 		this.ajax.products = new Products(ajaxClient);
@@ -122,6 +128,9 @@ export default class Client {
 		this.ajax.fuels = new Fuels(ajaxClient);
 		this.ajax.pcategories = new Pcategories(ajaxClient);
 		this.ajax.xmlimporter = new Xmlimporter(ajaxClient);
+		this.ajax.AjaxLogin = new AjaxLogin(ajaxClient);
+		this.ajax.AjaxRegister = new AjaxRegister(ajaxClient);
+		this.ajax.AjaxAccount = new AjaxAccount(ajaxClient);
 
 		this.webstore = {};
 		this.webstore.account = new WebStoreAccount(webstoreClient);

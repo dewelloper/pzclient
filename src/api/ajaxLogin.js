@@ -1,6 +1,7 @@
-export default class AjaxPaymentFormSettings {
+export default class AjaxLogin {
 	constructor(client) {
-		this.client = client;
+        this.client = client;
+        this.resourceUrl = '/login';
 	}
 
 	retrieve(data) {

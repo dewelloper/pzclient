@@ -49,23 +49,23 @@ import WebStoreServiceSettings from './webstore/serviceSettings';
 import WebStoreServiceActions from './webstore/serviceActions';
 import WebStoreServiceLogs from './webstore/serviceLogs';
 import Xmlimporter from './api/xmlimporter';
-import AjaxLogin from './api/AjaxLogin';
-import AjaxRegister from './api/AjaxRegister';
-import AjaxAccount from './api/AjaxAccount';
+import Login from './api/AjaxLogin';
+import Register from './api/AjaxRegister';
+import Account from './api/AjaxAccount';
 
 export default class Client {
 	constructor(options = {}) {
 		this.apiBaseUrl = options.apiBaseUrl || '/api/v1';
 		this.apiToken = options.apiToken;
 		this.ajaxBaseUrl = options.ajaxBaseUrl || '/ajax';
-		this.webstoreToken = options.webstoreToken;
+		//this.webstoreToken = options.webstoreToken;
 
 		const apiClient = new ApiClient({
 			baseUrl: this.apiBaseUrl,
 			token: this.apiToken
 		});
 		const ajaxClient = new AjaxClient({ baseUrl: this.ajaxBaseUrl });
-		const webstoreClient = new WebStoreClient({ token: this.webstoreToken });
+		//const webstoreClient = new WebStoreClient({ token: this.webstoreToken });
 
 		this.products = new Products(apiClient);
 		this.products.options = new ProductOptions(apiClient);
@@ -107,9 +107,9 @@ export default class Client {
 		this.apps = {};
 		this.apps.settings = new AppSettings(apiClient);
 		this.xmlimporter = new Xmlimporter(apiClient);
-		this.AjaxLogin = new AjaxLogin(apiClient);
-		this.AjaxRegister = new AjaxRegister(apiClient);
-		this.AjaxAccount = new AjaxAccount(apiClient);
+		this.login = new Login(apiClient);
+		this.register = new Register(apiClient);
+		this.account = new Account(apiClient);
 
 		this.ajax = {};
 		this.ajax.products = new Products(ajaxClient);
@@ -128,22 +128,22 @@ export default class Client {
 		this.ajax.fuels = new Fuels(ajaxClient);
 		this.ajax.pcategories = new Pcategories(ajaxClient);
 		this.ajax.xmlimporter = new Xmlimporter(ajaxClient);
-		this.ajax.AjaxLogin = new AjaxLogin(ajaxClient);
-		this.ajax.AjaxRegister = new AjaxRegister(ajaxClient);
-		this.ajax.AjaxAccount = new AjaxAccount(ajaxClient);
+		this.ajax.login = new Login(ajaxClient);
+		this.ajax.register = new Register(ajaxClient);
+		this.ajax.account = new Account(ajaxClient);
 
-		this.webstore = {};
-		this.webstore.account = new WebStoreAccount(webstoreClient);
-		this.webstore.services = new WebStoreServices(webstoreClient);
-		this.webstore.services.settings = new WebStoreServiceSettings(
-			webstoreClient
-		);
-		this.webstore.services.actions = new WebStoreServiceActions(webstoreClient);
-		this.webstore.services.logs = new WebStoreServiceLogs(webstoreClient);
+		// this.webstore = {};
+		// this.webstore.account = new WebStoreAccount(webstoreClient);
+		// this.webstore.services = new WebStoreServices(webstoreClient);
+		// this.webstore.services.settings = new WebStoreServiceSettings(
+		// 	webstoreClient
+		// );
+		// this.webstore.services.actions = new WebStoreServiceActions(webstoreClient);
+		// this.webstore.services.logs = new WebStoreServiceLogs(webstoreClient);
 	}
 
 	static authorize = (baseUrl, email) => ApiClient.authorize(baseUrl, email);
 
-	static authorizeInWebStore = (email, adminUrl) =>
-		WebStoreClient.authorize(email, adminUrl);
+	// static authorizeInWebStore = (email, adminUrl) =>
+	// 	WebStoreClient.authorize(email, adminUrl);
 }
